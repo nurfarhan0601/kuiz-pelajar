@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Arabic Bingo Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        .bingo-card {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            margin: auto;
+        }
+        .bingo-cell {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .bingo-cell:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Arabic Bingo Game</h1>
+    <div class="bingo-card" id="bingoCard">
+        <!-- Bingo cells will be inserted here -->
+    </div>
+    <script>
+        const bingoNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+        const bingoCard = document.getElementById('bingoCard');
+        bingoNumbers.forEach(num => {
+            const cell = document.createElement('div');
+            cell.classList.add('bingo-cell');
+            cell.textContent = num;
+            cell.onclick = () => {
+                cell.style.backgroundColor = '#cce5ff';
+            };
+            bingoCard.appendChild(cell);
+        });
+    </script>
+</body>
+</html>
